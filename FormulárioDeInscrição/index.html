@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulário de Inscrição - TechWeb 2025</title>
+        <style>
+            /* Adicione estilos básicos aqui */
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 20px;
+            }
+            fieldset {
+                margin-bottom: 20px;
+                padding: 15px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            legend {
+                font-weight: bold;
+                padding: 0 10px;
+            }
+            label {
+                display: block;
+                margin: 10px 0 5px;
+            }
+            
+            input, select, textarea {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+            input[type="radio"], input[type="checkbox"] {
+                width: auto;
+                margin-right: 100px;
+                align-items: right;
+            }
+            .radio-group, .checkbox-group {
+                margin: 10px 0;
+            }
+            .radio-group label, .checkbox-group label {
+                display: inline-flex;
+                align-items: center;
+                margin-right: 15px;
+            }
+            button {
+                padding: 10px 15px;
+                margin-right: 10px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            button[type="submit"] {
+                background-color: #4CAF50;
+                color: white;
+            }
+            button[type="reset"] {
+                background-color: #f44336;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Formulário de Inscrição - TechWeb 2025</h1>
+        <p>Gerido pelo Instituto de Tecnologías e Mundo Digital de Lisboa</p>
+        <hr>
+
+        <form action="processar.php" method="post">
+            <fieldset>
+                <legend>
+                    Dados Pessoais
+                </legend>
+                <label for="nome">Nome Completo</label>
+                <input type="text" name="nome" id="nome" required>
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+
+                <label for="numero">Número de Telemóvel</label>
+                <input type="tel"  name="numero" id="numero" maxlength="9" required>
+
+                <label for="data">Data de Nascimento</label>
+                <input type="date" name="data" id="data" required>
+            </fieldset>
+            
+            <fieldset>
+                <legend>
+                    Participação no Evento
+                </legend>
+
+                
+
+                <fieldset>
+                    <legend>Área de Participação</legend>
+                        <select name="area" id="area" required>
+                            <option>Seleciona...</option>
+                            <option>Programação Orientada a Objetos</option>
+                            <option>Redes e Comunicações</option>
+                            <option>Desenvolvimento de Páginas Web</option>
+                            <option>Cegurança Cibernética</option>
+                        </select>
+                </fieldset>
+                
+
+                <fieldset>
+                    <legend>Género</legend>
+                    <input type="radio" id="masc" name="genero" value="masculino" required>
+                    <label for="masc">Masculino</label>
+                    <input type="radio" id="fem" name="genero" value="feminino">
+                    <label for="fem">Feminino</label>
+                </fieldset>
+                
+                
+                <fieldset>
+                    <legend for="part">Tipo de Participação</legend>
+                    <label for="ouve">Ouvinte</label>    
+                        <input type="radio" name="part" value="ouve" required>
+                    <label for="teach">Apresentador</label>
+                        <input type="radio" name="part" value="teach">
+                    <label for="orgao">Organizador</label>   
+                        <input type="radio" name="part" value="orgao">
+                </fieldset>
+                
+                    
+                <fieldset>
+                    <legend for="dias">Dias de Participação</legend>
+                    <input type="checkbox" name="dias" id="dia1">
+                        <label for="dia1">Dia 1</label>
+                    <input type="checkbox" name="dias" id="dia2">
+                        <label for="dia2">Dia 2</label>
+                    <input type="checkbox" name="dias" id="dia3">
+                        <label for="dia3">Dia 3</label>
+                </fieldset>
+                
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Outros</legend>
+
+                
+                <label for="mais">Necessidades especiais</label>
+                <textarea name="mais" id="mais" rows="6" placeholder="Deixe o texto aqui..." required></textarea>
+
+                <label for="foto">Upload de foto para a crachá</label>
+                <input type="file" name="foto" id="foto" required> 
+
+                <label for="promo">Código Promocional <small>(opcional)</small></label>
+                <input type="text" placeholder="Ex: ABC123" maxlength="6" oninput="this.value = this.value.toUpperCase()"> <!-- stack overflow -->
+
+            </fieldset>
+
+            <fieldset>
+                <button type="reset">Repor</button>
+                <button type="submit">Enviar</button>
+            </fieldset>
+        </form>
+    </body>
+</html>

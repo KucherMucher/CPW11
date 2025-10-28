@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Perfil de Utilizador</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Perfil de Illia Kucher</h1>
+            <img src="https://cdn-icons-png.freepik.com/512/12225/12225881.png" width="125" alt="Foto de Perfil">
+        </header>
+
+        <main>
+            <pinfo>
+                    <h2>Informações Pessoais</h2>
+                    <dl>
+                        <dt>Nome:</dt>
+                        <dd>Illia Kucher</dd>
+                        <dt>Email:</dt>
+                        <dd>a10653@csmiguel.pt</dd>
+                        <dt>Localização:</dt>
+                        <dd>Fátima</dd>
+                    </dl>
+                
+            </pinfo>
+
+            <curso>
+                <h2>Cursos Inscritos</h2>
+                <table border="1" >
+                    <thead>
+                        <tr>
+                            <th>Curso</th>
+                            <th>Progresso</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>HTML para Iniciantes</td>
+                            <td>80%</td>
+                            <td><a href="#">Aceder</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>JavaScript Básico</td>
+                            <td>45%</td>
+                            <td><a href="#">Aceder</a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </curso>
+
+            <settings>
+                <h2>Atualizar Perfil</h2>
+                <form method="post">
+                        <label for="nome">Nome: </label>
+                        <input type="text" name="nome" id="nome" value="Illia Kucher">
+                        
+                        <br><br>
+                        
+                        <label for="mail">Email: </label>
+                        <input type="email" name="mail" id="mail" value="a10653@csmiguel.pt" disabled>
+
+                        <br><br>
+                        
+                        <label for="bio">Biografia:</label>
+                        <br>
+                        <textarea name="bio" id="bio" cols="50" rows="5">Gosto de estudar</textarea>
+
+                        <br><br>
+                        
+                        <label for="skill">Nível de Experiência: </label>
+                        <select name="skill" id="skill">
+                            <option>Iniciante</option>
+                            <option selected>Intermédio</option>
+                            <option>Avançado</option>
+                        </select>
+
+                        <br><br>
+                        
+                        <input type="submit" value="Guardar Alterações">
+                </form>
+            </settings>
+        </main>
+        
+    </body>
+</html>
