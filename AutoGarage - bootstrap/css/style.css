@@ -1,0 +1,32 @@
+.design{
+    width: 1024px;
+    background-color: #00cacc;
+    margin: 0 auto;
+}
+
+
+.title{
+    background-color: #0475b6;
+    color: rgb(224, 0, 0);
+    padding: 0.3rem 1.5rem;
+}
+
+ul {
+    text-align: left;
+}
+
+img{
+    padding: 5px;
+    margin: 5px;
+}
+
+.antipadright{
+    padding-right: 0em;
+    padding-left: 0.5rem;
+}
+
+.antipadleft{
+    padding-left: 0em;
+    padding-right: 0.5rem;
+}
+
