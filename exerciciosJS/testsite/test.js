@@ -126,7 +126,7 @@ function calculate_2ndvalues(inputValue, opperators, op_poss){
 
 }
 
-function calculate_3rdvalues(values, operators, op_poss) {
+function calculate_3rdvalues(values, operators, op_poss) { //bug : 1+1+1 gives 4, and so on
     let sum = 0; // Start with the first value
     for (let i = 0; i < operators.length; i++) {
         if (operators[i] == '+') {
