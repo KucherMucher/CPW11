@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Imagens Interativa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="galeria-header">
+        <h1>Galeria de Imagens Interativa</h1>
+        <p>Clica numa miniatura para ver a imagem em tamanho grande</p>
+    </header>
+
+    <main class="galeria-principal">
+        <section class="area-imagem">
+            <img id="imagemPrincipal" src="imagens/imagem1.jpg" alt="Imagem principal" class="imagem-principal">
+            <div class="loading" id="loading">Carregando...</div>
+        </section>
+
+        <section class="area-miniaturas">
+            <div class="miniaturas-container" id="miniaturasContainer">
+                <!-- Miniaturas serão adicionadas aqui -->
+            </div>
+        </section>
+
+        <section class="area-informacoes">
+            <h2 id="tituloImagem">Título da Imagem</h2>
+            <p id="descricaoImagem">Descrição da imagem aparecerá aqui</p>
+            <span id="autorImagem">Autor: Nome do Autor</span>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
