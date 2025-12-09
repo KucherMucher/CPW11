@@ -32,7 +32,7 @@ function calculate(){
     }
 
     else if (operrators.includes("*") || operrators.includes("/")){ //calculcate second importance values
-        let calc_array = calculate_2ndvalues(vales, opperators, op_poss)
+        let calc_array = calculate_2ndvalues(values, opperators, op_poss)
     }
 
     else{
@@ -84,7 +84,7 @@ function get_values(string){
 
 }
 
-function calculate_1stvalues(inputValue, opperators, op_poss){
+function calculate_1stvalues(values, opperators, op_poss){
     let startPos, endPos;
     let sum = 0;
     for(let i=0; i<=string.length; i++){
@@ -93,50 +93,58 @@ function calculate_1stvalues(inputValue, opperators, op_poss){
     }
 
     if (operrators.includes("*") || operrators.includes("/")){ //calculcate second importance values
-        let auxcalc = calculate_2ndvalues(inputValue, opperators, op_poss)
+        let auxcalc = calculate_2ndvalues(values, opperators, op_poss)
 
         for (let i=startPos; i<=endPos; i++){ // modify
             if (opperators[i]=='+'){
-                sum = sum + (inputValue[i-1]+inputValue[i+1])
+                sum = sum + (values[i-1]+values[i+1])
             }
 
             else if (opperators[i]=='-'){
-                sum = sum + (inputValue[i-1]-inputValue[i+1])
+                sum = sum + (values[i-1]-values[i+1])
             }
         }
     }
 
     else{
-        for (let i=startPos; i<=endPos; i++){
-            if (opperators[i]=='+'){
-                sum = sum + (inputValue[i-1]+inputValue[i+1])
-            }
-
-            else if (opperators[i]=='-'){
-                sum = sum + (inputValue[i-1]-inputValue[i+1])
-            }
-        }
+        sum = calculate_3rdvalues(values, opperators, op_poss, startPos, endPos)
     }
+    values[starPos] = sum // save the sum in the parenteces position
 
-    return [inputValue, opperators, op_poss, calc]
+    opperators.splice(startPos, 1)
+    opperatros.splice(endPos, 1)
+    //                                              
+    opperators.splice(startPos+1, endPos-startPos) 
+    console.log(values, "removed rest parenteces values")
+    return [values, opperators, op_poss, calc]
 
 }
 
-function calculate_2ndvalues(inputValue, opperators, op_poss){
+function calculate_2ndvalues(values, opperators, op_poss){
 
 }
 
-function calculate_3rdvalues(values, operators, op_poss) { //bug : 1+1+1 gives 4, and so on
-    let sum = 0; // Start with the first value
-    for (let i = 0; i < operators.length; i++) {
-        if (operators[i] == '+') {
-            sum += Number(values[i])+Number(values[i + 1]);
-        } else if (operators[i] == '-') {
-            sum -= Number(values[i])-Number(values[i + 1]);
-        }
-    }
+function calculate_3rdvalues(values, operators, op_poss, startPos = 0, endPos = opperators.length) { //bug : 1+1+1 gives 4, and so on
+    let sum = Number(values[0]); // Start with the first value
+    
+        for (let i = startPos; i <= endPos; i++) {
+            if (operators[i] == '+') {
+                sum += Number(values[i+1]);
+            } else if (operators[i] == '-') { // 3 + (7 + 7)
+                sum -= Number(values[i+1]);   // 0    1   2
+            }//                                  3 +  14
+        }//                                      0    1
+    
+    
     return sum;
 }
 
+/*
+if(values.length == 2){
+
+}
+    else if(values.lenght == 2){
+        alert("só único número")
+    }*/
 
 
