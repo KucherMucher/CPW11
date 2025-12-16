@@ -124,7 +124,7 @@ function calculate_2ndvalues(values, opperators, op_poss){
 
 }
 
-function calculate_3rdvalues(values, operators, op_poss, startPos = 0, endPos = opperators.length) { //bug : 1+1+1 gives 4, and so on
+function calculate_3rdvalues(values, operators, op_poss, startPos = 0, endPos = operators.length) { //bug : 1+1+1 gives 4, and so on
     let sum = Number(values[0]); // Start with the first value
     
         for (let i = startPos; i <= endPos; i++) {
