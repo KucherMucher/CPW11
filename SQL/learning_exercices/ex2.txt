@@ -1,0 +1,132 @@
+Parte 1, Conceitos (resposta curta)
+
+    Define “base de dados” e dá um exemplo do teu tema:
+
+    1. O que é uma entidade, no teu projeto? Indica 3 entidades e justifica porque são entidades.
+    2. O que é um atributo? Indica 3 atributos para cada uma das tuas entidades.
+    3. Explica o que é um relacionamento. Descreve dois relacionamentos possíveis no teu tema.
+    4. Explica o que é uma chave primária e porque é necessária.
+    5. Explica o que é uma chave estrangeira e indica onde a vais usar.
+
+    Respostas:
+
+        1. Entidades são "referências ao algo real" sobre qual queremos guardar informação na minha base de dados.
+        Ou seja, uma *tabela de informação*. 
+        No meu projeto, as entidades seriam a "Prova", "Equipa" e "Atleta". São entidades porque representam algo real.
+
+        2. Atributos são caracteristicas da entidade, ou seja, informações relaciondas com o objeto real.
+        Represantariam *colunas da tabela de entidade*.
+        No meu caso, os atributos da "Prova" seriam "Nome", "Distância de Natação", "Distância de Cicilismo" e "Distância de Corrida";
+        Os atributos da "Equipa" seriam "Nome", "Pontuação" e "Ranking".
+        Os atributos do "Atleta" seriam "Nome", "Escalão", "Tempo Total" e "Ranking".
+
+        3. Relacionamentos são ligações entre duas entidades. Existem varios relacionamentos, como por exemplo 1 para N e N para N.
+        Por exemplo, no caso de 1 para N, diferentes entidades podem pertencer a 1 entidade, mas só a uma.
+        No meu caso, os entidades "Atleta" vão estar ligados a entidade "Equipa" e só a única entidade do tipo "Equipa". Por isso aqui seria relacionamento de 1 para N.
+        No caso de relacionamento entre "Equipa" e "Prova" queria fazer relacionamento N para N, pois não faz sentido uma equipa fazer só única prova.
+        N para N seria, por exemplo, Equipa A pertence a Prova A e Prova B.
+        Assim, diferentes entidades de tipo "Equipa" iam pertencer, por exemplo, a entidade "Prova A" de tipo "Prova".
+        
+        Os gráficos de árvore seriam assim:
+
+        "Prova"
+            ↳ N "Equipa"s 
+
+        "Equipa"
+            ↳ N "Atleta"s
+
+        4. Chave primaria é identificação ou atributo principal do objeto guardada em entidade. Chave primaria não se repete (dentro da tabela de entidade).
+        Por exemplo, a entidade "Prova" teria id_prova como uma chave primaria. É necessária para diferenciar diferentes registos na entidade.
+
+        5. Chave estrangeira é um atributo da entidade que referência a chave primaria da outra entidade.
+        Por exemplo, "Atleta 1" pertence a "Equipa 1". "Equipa 1" tem chave primaria = "1" por isso a chave estrangeira do "Atleta 1" vai ser 1.
+
+        Exemplo em tabela:
+
+        Tabela Equipa:                         
+
+        id_equipa | Nome | ... | id_prova      
+        ---------------------------------
+        1         | A    | ... | 1 
+        ---------------------------------
+        2         | B    | ... | 1
+        ---------------------------------
+        3         | C    | ... | 2
+
+
+Parte 2, Classificar exemplos (entidade vs atributo)
+    Para cada item abaixo, escreve Entidade ou Atributo e justifica numa frase.
+
+        “Filme”      - Entidade. Representa um objeto real.
+        “Ano”        - Atributo. Representa uma caracteristica do objeto real. (Também é possível ser Entidade)
+        “Preço”      - Atributo. Representa uma caracteristica do objeto real.
+        “Receita”    - Entidade. Representa um objeto real.
+        “Categoria”  - Entidade. Representa um objeto de classificação..
+        “Comentário” - Entidade. Representa um objeto que contem diferente dados.
+
+Parte 3, Relação 1 para N (aplicação)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Exemplo: Uma Categoria tem muitos Produtos, e cada Produto pertence a uma Categoria.
+
+    O teu exemplo 1 para N:
+        - Uma *Equipa* tem muitos *Atletas*, e cada *Atleta* pertence a uma *Equipa*.
+    
+    Agora indica onde ficaria a chave estrangeira (FK):
+
+        FK fica na tabela: Atleta
+        Nome sugerido do campo FK: id_equipa
+
+
+Parte 4, Do conceito à tabela
+    Completa a correspondência:
+
+        Entidade → Atleta
+        Atributo → Tempo Total
+        Relacionamento → 1 para N
+
+Parte 5, Mini desafio (pensar antes do SQL)
+
+Tabela Prova:                         
+
+        id_equipa | Nome | D_Natação | D_Ciclismo | D_Corrida 
+        ------------------------------------------------------
+        1         | A    | ...       |            |           
+        ------------------------------------------------------
+        2         | B    | ...       | 1          |
+        ------------------------------------------------------
+        3         | C    | ...       | 2          |
