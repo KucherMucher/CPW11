@@ -100,13 +100,13 @@ Parte 5, Mini desafio (pensar antes do SQL)
     Tabela Tipo_Prova:
 
         id_tipo_prova | Nome 
-        ---------------------
-        1          | Triatlo
-        ---------------------
-        2          | Duatlo
-        ---------------------
-        3          | Aquatlo
-        ---------------------
+        -----------------------
+        1             | Triatlo
+        -----------------------
+        2             | Duatlo
+        -----------------------
+        3             | Aquatlo
+        -----------------------
 
     Tabela Atleta:
 
