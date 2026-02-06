@@ -99,7 +99,7 @@ Parte 5, Mini desafio (pensar antes do SQL)
 
     Tabela Tipo_Prova:
 
-        id_tipo_prova | Nome 
+        id_tipo_prova | Nome   
         -----------------------
         1             | Triatlo
         -----------------------
