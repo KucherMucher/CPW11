@@ -1,4 +1,3 @@
-/*
   3) Perguntas obrigatórias (compreensão)
     Responde por palavras tuas:
       
@@ -12,48 +11,8 @@
       - FOREIGN KEY (id_categoria) significa a criação de chave estrangeira e depois REFERENCES categoria(id_categoria) liga essa chave estrangeira a chave primaria da tabela categoria
 
     4. Qual é a diferença entre WHERE e ORDER BY?
-      - WHERE é uma ordenação de itens 
+      - WHERE é uma ordenação de itens por valor de atributo especifico, por exemplo. Se fazer SELECT * FROM item WHERE ano = 2019; isto ia mostrar só do ano de 2019
+      - ORDER BY é uma ordenação de itens por ordem crescente ou decrescente de um atributo especifico. Se fazer SELECT * FROM item ORDER BY ano DESC; ia mostrar itens ordenados por ano de maior para menor.
     5. Se apagares uma categoria, o que pode acontecer aos itens que pertencem a essa categoria? (resposta conceptual)
+      - Quando apagas uma categoria usando DELETE FROM categoria WHERE id_categoria = 1; a categoria na tabela apaga-se mas FK de item fica com o mesmo id do item que pertence a categoria.
 
-*/
-
-
-
-/*-- Tabela de Classificação
-CREATE TABLE categoria (
-  id_categoria INTEGER PRIMARY KEY,
-  nome TEXT NOT NULL
-);
-
--- Tabela Principal
-CREATE TABLE item (
-  id_item INTEGER PRIMARY KEY,
-  titulo TEXT NOT NULL,
-  ano INTEGER,
-  id_categoria INTEGER NOT NULL,
-  FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
-); */
-
-/*
-INSERT INTO categoria (id_categoria, nome) VALUES
-(1, 'Ação'),
-(2, 'Aventura'),
-(3, 'Drama'),
-(4, 'Comédia');
-
-INSERT INTO item (id_item, titulo, ano, id_categoria) VALUES
-(1, 'Exemplo 1', 2020, 1),
-(2, 'Exemplo 2', 2022, 2),
-(3, 'Exemplo 3', 2019, 3),
-(4, 'Exemplo 4', 2021, 1);
-*/
-
-/*-- Ver tudo
-SELECT * FROM categoria;
-SELECT * FROM item; */
-
-/* -- Filtrar (WHERE)
-SELECT * FROM item WHERE id_categoria = 1;
-
--- Ordenar (ORDER BY)
-SELECT * FROM item ORDER BY ano DESC; */
